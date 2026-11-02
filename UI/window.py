@@ -1,5 +1,6 @@
 import tkinter as tk
 from UI.buttons import MyButton
+from UI.myCanvas import MyCanvas
 
 class CalculatorWindow():
     def __init__(self, width, height):
@@ -10,13 +11,9 @@ class CalculatorWindow():
         self.root.resizable(False, False)
 
         # Creates a canvas that is centered in the middle of the window
-        self.canvas = tk.Canvas(self.root, width=width-50, height=height-50, bg='white').pack(anchor=tk.CENTER, expand = True)
-    
-    def button_creator(self):
-        button1 = MyButton(self.canvas, "click me")
+        self.canvas = MyCanvas(self.root, width=width-50, height=height-50)
 
     def window_run(self):
-        self.button_creator()
         self.root.mainloop()
         
 
