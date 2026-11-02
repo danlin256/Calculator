@@ -1,16 +1,10 @@
 from tkinter import ttk
 
-class MyButton:
-    def __init__(self, root, label, command):
-
-        self.button = ttk.Button(
-            root, 
-            text = label,
-            command = command
-        )
-
-        self.button.pack(
-            ipadx = 5,
-            ipady = 5,
-            expand = False
+# This class is a wrapper for the ttk.Button widget, allowing for easier creation of buttons with specified labels and commands.
+class MyButton(ttk.Button):
+    def __init__(self, parent, label, command):
+        super().__init__(
+            parent,
+            text=label,
+            command=command
         )
