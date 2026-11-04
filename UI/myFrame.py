@@ -1,3 +1,4 @@
+from UI.myText import MyText
 from tkinter import Frame
 from UI.buttons import MyButton
 from UI.myLabels import MyLabel
@@ -29,9 +30,14 @@ class MyFrame(Frame):
         label = MyLabel(self.frame, text)
         label.grid(row=row, column=col)
 
+    def create_text(self, col=0, row=0):
+        text = MyText(self.frame)
+        text.grid(row=row, column=col)
+
     # Populates the frame with buttons and labels
     def populate_Frame(self):
         self.create_label("Welcome to the Calculator!")
-        for i in range(24):
+        texter = self.create_text(col=0, row=1)  # Creates a text widget at row 1, column 0
+        for i in range(24): 
             self.create_button(f"Button {i+1}", lambda i=i: print(f"Button {i+1} clicked!"), col=i%4, row=i//4)
         
