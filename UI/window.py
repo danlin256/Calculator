@@ -1,7 +1,7 @@
 import tkinter as tk
 from UI.myFrame import MyFrame
 
-class CalculatorWindow():
+class CalculatorWindow:
     def __init__(self, width, height):
         self.root = tk.Tk()
 
